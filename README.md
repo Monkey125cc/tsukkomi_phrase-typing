@@ -1,0 +1,2 @@
+# tsukkomi_phrase-typing
+ツッコミのフレーズをタイピングして練習できるサイト
