@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ツッコミタイピング</title>
+<style>
+body{
+  font-family:sans-serif;
+  text-align:center;
+  margin-top:50px;
+}
+#text{
+  font-size:28px;
+  margin:20px;
+}
+.correct{color:black;}
+.miss{color:red;}
+</style>
+</head>
+
+<body>
+
+<h1>ツッコミタイピング</h1>
+
+<div id="text"></div>
+<input id="input" autofocus>
+
+<script>
+const phrase = "好きな男待ってる女くらい顔見たらわかるわ。";
+
+const textEl = document.getElementById("text");
+const input = document.getElementById("input");
+
+function render(){
+  let html="";
+  for(let i=0;i<phrase.length;i++){
+    if(i < input.value.length){
+      if(input.value[i]===phrase[i]){
+        html+=`<span class="correct">${phrase[i]}</span>`;
+      }else{
+        html+=`<span class="miss">${phrase[i]}</span>`;
+      }
+    }else{
+      html+=phrase[i];
+    }
+  }
+  textEl.innerHTML=html;
+}
+
+render();
+input.addEventListener("input",render);
+</script>
+
+</body>
+</html>
